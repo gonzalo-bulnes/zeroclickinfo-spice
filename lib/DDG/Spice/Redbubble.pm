@@ -15,13 +15,17 @@ spice to => 'http://example.com/search/$1';
 
 # Triggers - https://duck.co/duckduckhack/spice_triggers
 # The exact Redbubble product names.
-triggers any => 't-shirts', 'leggings', 'scarves', 'pencil skirts', 'kid clothes',
-                'iphone cases', 'samsung galaxy cases', 'ipad cases', 'laptop skins', 'laptop sleves',
-                'stickers',
-                'posters', 'canvas prints', 'photographic prints', 'art prints', 'framed prints', 'metal prints',
-                'throw pillows', 'duvet covers', 'mugs', 'travel mugs',
-                'greeting cards', 'postcards', 'calendars', 'spiral notebooks', 'hardcover journals',
-                'tote bags', 'studio pouches', 'drawstring bags';
+my @rb_products_singular = ('t-shirt', 'pencil skirt',
+                            'iphone case', 'samsung galaxy case', 'ipad case', 'laptop skin', 'laptop sleeve',
+                            'sticker',
+                            'poster', 'canvas print', 'photographic print', 'art print', 'framed print', 'metal print',
+                            'throw pillow', 'duvet cover', 'mug', 'travel mug',
+                            'greeting card', 'postcard', 'calendar', 'spiral notebook', 'hardcover journal',
+                            'tote bag', 'drawstring bag');
+my @rb_products_irregular = ('leggings', 'scarf', 'scarves', 'kid clothes', 'studio pouch', 'studio pouches');
+my @rb_products_plural = map { $_.'s' } @rb_products_singular;
+
+triggers any => (@rb_products_singular, @rb_products_plural, @rb_products_irregular);
 
 # Handle statement
 handle query => sub {
