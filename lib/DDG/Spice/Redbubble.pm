@@ -1,9 +1,6 @@
 package DDG::Spice::Redbubble;
 
-# ABSTRACT: Write an abstract here
-
-# Start at http://docs.duckduckhack.com/walkthroughs/forum-lookup.html if you are new
-# to instant answer development
+# ABSTRACT: Search for available products.
 
 use DDG::Spice;
 
@@ -17,7 +14,14 @@ spice wrap_jsonp_callback => 0; # only enable for non-JSONP APIs (i.e. no &callb
 spice to => 'http://example.com/search/$1';
 
 # Triggers - https://duck.co/duckduckhack/spice_triggers
-triggers any => 'triggerword', 'trigger phrase';
+# The exact Redbubble product names.
+triggers any => 't-shirts', 'leggings', 'scarves', 'pencil skirts', 'kid clothes',
+                'iphone cases', 'samsung galaxy cases', 'ipad cases', 'laptop skins', 'laptop sleves',
+                'stickers',
+                'posters', 'canvas prints', 'photographic prints', 'art prints', 'framed prints', 'metal prints',
+                'throw pillows', 'duvet covers', 'mugs', 'travel mugs',
+                'greeting cards', 'postcards', 'calendars', 'spiral notebooks', 'hardcover journals',
+                'tote bags', 'studio pouches', 'drawstring bags';
 
 # Handle statement
 handle query => sub {
