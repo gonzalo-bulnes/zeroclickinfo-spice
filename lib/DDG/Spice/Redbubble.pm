@@ -2,6 +2,7 @@ package DDG::Spice::Redbubble;
 
 # ABSTRACT: Search for available products.
 
+use strict;
 use DDG::Spice;
 
 # Caching - http://docs.duckduckhack.com/backend-reference/api-reference.html#caching
