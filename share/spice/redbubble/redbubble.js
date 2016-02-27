@@ -12,11 +12,11 @@
             id: "redbubble",
 
             // Customize these properties
-            name: "AnswerBar title",
+            name: "Products",
             data: api_result,
             meta: {
-                sourceName: "Example.com",
-                sourceUrl: 'http://example.com/url/to/details/' + api_result.name
+                sourceName: "Redbubble " + l('Results'),
+                sourceUrl: 'https://www.redbubble.com/shop/' + api_result.name
             },
             normalize: function(item) {
                 return {
