@@ -20,11 +20,8 @@ spice to => 'http://example.com/search/$1';
 triggers any => 'triggerword', 'trigger phrase';
 
 # Handle statement
-handle query_parts => sub {
-
-    # Query is in $_ or @_, depending on the handle you chose...if you
-    # need to do something with it before returning
-    return \@_;
+handle query => sub {
+    return $_;
 };
 
 1;
